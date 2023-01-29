@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.categorias {
+    background-color: v.$grisClaro;
+    padding: 5rem 0;
+
+    &__heading {
+        @include m.heading;
+    }
+
+    &__grid {
+        padding-top: 2rem;
+
+        @include m.grid(1, 4rem);
+
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+
+        @include m.desktop {
+            @include m.grid(3, 2rem);
+        }
+    }
+
+}
+
+.categoria {
+    border: 1px solid darken(v.$grisClaro, 5%);
+
+    &__imagen {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__nombre {
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+}
