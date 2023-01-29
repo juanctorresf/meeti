@@ -1,0 +1,39 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sidebar {
+    &__imagen {
+        width: 100%;
+    }
+
+    @include m.tablet {
+        grid-column: 3 / 4;
+    }
+
+    &__descripcion {
+        padding: 4rem;
+        background-color: v.$secundario;
+        color: v.$blanco;
+    }
+
+    &__informacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__heading {
+        margin: 0;
+        text-align: center;
+    }
+    &__fecha,
+    &__hora,
+    &__ubicacion {
+        color: v.$blanco;
+        margin: 1rem;
+        
+        span {
+            font-weight: 700;
+        }
+    }
+}
